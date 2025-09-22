@@ -1,0 +1,697 @@
+checkout.html here 
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Untree.co">
+	<link rel="shortcut icon" href="favicon.png">
+
+	<meta name="description" content="" />
+	<meta name="keywords" content="bootstrap, bootstrap4" />
+
+	<!-- Bootstrap CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link href="css/tiny-slider.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<title>Livique Free Bootstrap 5 Template for Liviqueture and Interior Design Websites by Untree.co </title>
+</head>
+
+<body>
+
+	<!-- Start Header/Navigation -->
+	<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Livique navigation bar">
+
+		<div class="container">
+			<a class="navbar-brand" href="index.html">Livique<span>.</span></a>
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsLivique"
+				aria-controls="navbarsLivique" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarsLivique">
+				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+					<li class="nav-item ">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li><a class="nav-link" href="shop.html">Shop</a></li>
+					<li><a class="nav-link" href="about.html">About us</a></li>
+					<li><a class="nav-link" href="services.html">Services</a></li>
+					<li><a class="nav-link" href="blog.html">Blog</a></li>
+					<li><a class="nav-link" href="contact.html">Contact us</a></li>
+				</ul>
+				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+							<img src="images/user.svg">
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="signup.html">Register</a></li>
+							<li><a class="dropdown-item" href="login.html">Login</a></li>
+							<li><a class="dropdown-item" href="orders.html">Order History</a></li>
+							<li><a class="dropdown-item" href="#" onclick="logout()">Logout</a></li>
+						</ul>
+					</li>
+
+
+					<li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+				</ul>
+			</div>
+		</div>
+
+	</nav>
+	<!-- End Header/Navigation -->
+
+	<!-- Start Hero Section -->
+	<div class="hero">
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="col-lg-5">
+					<div class="intro-excerpt">
+						<h1>Checkout</h1>
+					</div>
+				</div>
+				<div class="col-lg-7">
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Hero Section -->
+
+	<div class="untree_co-section">
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col-md-12">
+					<div class="border p-4 rounded" role="alert">
+						Returning customer? <a href="#">Click here</a> to login
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<label class="text-black h4" for="coupon">Coupon</label>
+					<p>Enter your coupon code if you have one.</p>
+				</div>
+				<div class="col-md-8 mb-3 mb-md-0">
+					<input type="text" class="form-control py-3" id="coupon-code" placeholder="Enter coupon code"
+						class="form-control" />
+					<button class="btn btn-black" onclick="applyCoupon()">Apply Coupon</button>
+					<p id="coupon-message" style="margin-top: 10px;"></p>
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 mb-5 mb-md-0">
+					<h2 class="h3 mb-3 text-black">Billing Details</h2>
+					<div class="p-3 p-lg-5 border bg-white">
+						<div class="form-group">
+							<label for="c_country" class="text-black">Country <span class="text-danger">*</span></label>
+							<select id="c_country" class="form-control">
+								<option value="">Select a country</option>
+								<option value="AF">Afghanistan</option>
+								<option value="AL">Albania</option>
+								<option value="DZ">Algeria</option>
+								<option value="AD">Andorra</option>
+								<option value="AO">Angola</option>
+								<option value="AG">Antigua and Barbuda</option>
+								<option value="AR">Argentina</option>
+								<option value="AM">Armenia</option>
+								<option value="AU">Australia</option>
+								<option value="AT">Austria</option>
+								<option value="AZ">Azerbaijan</option>
+								<option value="BS">Bahamas</option>
+								<option value="BH">Bahrain</option>
+								<option value="BD">Bangladesh</option>
+								<option value="BB">Barbados</option>
+								<option value="BY">Belarus</option>
+								<option value="BE">Belgium</option>
+								<option value="BZ">Belize</option>
+								<option value="BJ">Benin</option>
+								<option value="BT">Bhutan</option>
+								<option value="BO">Bolivia</option>
+								<option value="BA">Bosnia and Herzegovina</option>
+								<option value="BW">Botswana</option>
+								<option value="BR">Brazil</option>
+								<option value="BN">Brunei</option>
+								<option value="BG">Bulgaria</option>
+								<option value="BF">Burkina Faso</option>
+								<option value="BI">Burundi</option>
+								<option value="CV">Cabo Verde</option>
+								<option value="KH">Cambodia</option>
+								<option value="CM">Cameroon</option>
+								<option value="CA">Canada</option>
+								<option value="CF">Central African Republic</option>
+								<option value="TD">Chad</option>
+								<option value="CL">Chile</option>
+								<option value="CN">China</option>
+								<option value="CO">Colombia</option>
+								<option value="KM">Comoros</option>
+								<option value="CD">Congo (Democratic Republic)</option>
+								<option value="CG">Congo (Republic)</option>
+								<option value="CR">Costa Rica</option>
+								<option value="CI">Côte d’Ivoire</option>
+								<option value="HR">Croatia</option>
+								<option value="CU">Cuba</option>
+								<option value="CY">Cyprus</option>
+								<option value="CZ">Czech Republic</option>
+								<option value="DK">Denmark</option>
+								<option value="DJ">Djibouti</option>
+								<option value="DM">Dominica</option>
+								<option value="DO">Dominican Republic</option>
+								<option value="EC">Ecuador</option>
+								<option value="EG">Egypt</option>
+								<option value="SV">El Salvador</option>
+								<option value="GQ">Equatorial Guinea</option>
+								<option value="ER">Eritrea</option>
+								<option value="EE">Estonia</option>
+								<option value="SZ">Eswatini</option>
+								<option value="ET">Ethiopia</option>
+								<option value="FJ">Fiji</option>
+								<option value="FI">Finland</option>
+								<option value="FR">France</option>
+								<option value="GA">Gabon</option>
+								<option value="GM">Gambia</option>
+								<option value="GE">Georgia</option>
+								<option value="DE">Germany</option>
+								<option value="GH">Ghana</option>
+								<option value="GR">Greece</option>
+								<option value="GD">Grenada</option>
+								<option value="GT">Guatemala</option>
+								<option value="GN">Guinea</option>
+								<option value="GW">Guinea-Bissau</option>
+								<option value="GY">Guyana</option>
+								<option value="HT">Haiti</option>
+								<option value="HN">Honduras</option>
+								<option value="HU">Hungary</option>
+								<option value="IS">Iceland</option>
+								<option value="IN">India</option>
+								<option value="ID">Indonesia</option>
+								<option value="IR">Iran</option>
+								<option value="IQ">Iraq</option>
+								<option value="IE">Ireland</option>
+								<option value="IL">Israel</option>
+								<option value="IT">Italy</option>
+								<option value="JM">Jamaica</option>
+								<option value="JP">Japan</option>
+								<option value="JO">Jordan</option>
+								<option value="KZ">Kazakhstan</option>
+								<option value="KE">Kenya</option>
+								<option value="KI">Kiribati</option>
+								<option value="KR">Korea, South</option>
+								<option value="KW">Kuwait</option>
+								<option value="KG">Kyrgyzstan</option>
+								<option value="LA">Laos</option>
+								<option value="LV">Latvia</option>
+								<option value="LB">Lebanon</option>
+								<option value="LS">Lesotho</option>
+								<option value="LR">Liberia</option>
+								<option value="LY">Libya</option>
+								<option value="LI">Liechtenstein</option>
+								<option value="LT">Lithuania</option>
+								<option value="LU">Luxembourg</option>
+								<option value="MG">Madagascar</option>
+								<option value="MW">Malawi</option>
+								<option value="MY">Malaysia</option>
+								<option value="MV">Maldives</option>
+								<option value="ML">Mali</option>
+								<option value="MT">Malta</option>
+								<option value="MH">Marshall Islands</option>
+								<option value="MR">Mauritania</option>
+								<option value="MU">Mauritius</option>
+								<option value="MX">Mexico</option>
+								<option value="FM">Micronesia</option>
+								<option value="MD">Moldova</option>
+								<option value="MC">Monaco</option>
+								<option value="MN">Mongolia</option>
+								<option value="ME">Montenegro</option>
+								<option value="MA">Morocco</option>
+								<option value="MZ">Mozambique</option>
+								<option value="MM">Myanmar</option>
+								<option value="NA">Namibia</option>
+								<option value="NR">Nauru</option>
+								<option value="NP">Nepal</option>
+								<option value="NL">Netherlands</option>
+								<option value="NZ">New Zealand</option>
+								<option value="NI">Nicaragua</option>
+								<option value="NE">Niger</option>
+								<option value="NG">Nigeria</option>
+								<option value="MK">North Macedonia</option>
+								<option value="NO">Norway</option>
+								<option value="OM">Oman</option>
+								<option value="PK">Pakistan</option>
+								<option value="PW">Palau</option>
+								<option value="PA">Panama</option>
+								<option value="PG">Papua New Guinea</option>
+								<option value="PY">Paraguay</option>
+								<option value="PE">Peru</option>
+								<option value="PH">Philippines</option>
+								<option value="PL">Poland</option>
+								<option value="PT">Portugal</option>
+								<option value="QA">Qatar</option>
+								<option value="RO">Romania</option>
+								<option value="RU">Russia</option>
+								<option value="RW">Rwanda</option>
+								<option value="KN">Saint Kitts and Nevis</option>
+								<option value="LC">Saint Lucia</option>
+								<option value="VC">Saint Vincent and the Grenadines</option>
+								<option value="WS">Samoa</option>
+								<option value="SM">San Marino</option>
+								<option value="ST">São Tomé and Príncipe</option>
+								<option value="SA">Saudi Arabia</option>
+								<option value="SN">Senegal</option>
+								<option value="RS">Serbia</option>
+								<option value="SC">Seychelles</option>
+								<option value="SL">Sierra Leone</option>
+								<option value="SG">Singapore</option>
+								<option value="SK">Slovakia</option>
+								<option value="SI">Slovenia</option>
+								<option value="SB">Solomon Islands</option>
+								<option value="SO">Somalia</option>
+								<option value="ZA">South Africa</option>
+								<option value="SS">South Sudan</option>
+								<option value="ES">Spain</option>
+								<option value="LK">Sri Lanka</option>
+								<option value="SD">Sudan</option>
+								<option value="SR">Suriname</option>
+								<option value="SE">Sweden</option>
+								<option value="CH">Switzerland</option>
+								<option value="SY">Syria</option>
+								<option value="TJ">Tajikistan</option>
+								<option value="TZ">Tanzania</option>
+								<option value="TH">Thailand</option>
+								<option value="TL">Timor-Leste</option>
+								<option value="TG">Togo</option>
+								<option value="TO">Tonga</option>
+								<option value="TT">Trinidad and Tobago</option>
+								<option value="TN">Tunisia</option>
+								<option value="TR">Turkey</option>
+								<option value="TM">Turkmenistan</option>
+								<option value="TV">Tuvalu</option>
+								<option value="UG">Uganda</option>
+								<option value="UA">Ukraine</option>
+								<option value="AE">United Arab Emirates</option>
+								<option value="GB">United Kingdom</option>
+								<option value="US">United States</option>
+								<option value="UY">Uruguay</option>
+								<option value="UZ">Uzbekistan</option>
+								<option value="VU">Vanuatu</option>
+								<option value="VA">Vatican City</option>
+								<option value="VE">Venezuela</option>
+								<option value="VN">Vietnam</option>
+								<option value="YE">Yemen</option>
+								<option value="ZM">Zambia</option>
+								<option value="ZW">Zimbabwe</option>
+							</select>
+
+						</div>
+						<div class="form-group row">
+							<div class="col-md-6">
+								<label for="c_fname" class="text-black">First Name <span
+										class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="c_fname" name="c_fname">
+							</div>
+							<div class="col-md-6">
+								<label for="c_lname" class="text-black">Last Name <span
+										class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="c_lname" name="c_lname">
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-md-12">
+								<label for="c_companyname" class="text-black">Company Name </label>
+								<input type="text" class="form-control" id="c_companyname" name="c_companyname">
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-md-12">
+								<label for="c_address" class="text-black">Address <span
+										class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="c_address" name="c_address"
+									placeholder="Street address">
+							</div>
+						</div>
+
+						<div class="form-group mt-3">
+							<input type="text" class="form-control"
+								placeholder="Apartment, suite, unit etc. (optional)">
+						</div>
+
+						<div class="form-group row">
+							<div class="col-md-6">
+								<label for="c_state_country" class="text-black">State / Country <span
+										class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="c_state_country" name="c_state_country">
+							</div>
+							<div class="col-md-6">
+								<label for="c_postal_zip" class="text-black">Postcode / Zip <span
+										class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="c_postal_zip" name="c_postal_zip">
+							</div>
+						</div>
+
+						<div class="form-group row mb-5">
+							<div class="col-md-6">
+								<label for="c_email_address" class="text-black">Email Address <span
+										class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="c_email_address" name="c_email_address">
+							</div>
+							<div class="col-md-6">
+								<label for="c_phone" class="text-black">Phone <span class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="c_phone" name="c_phone"
+									placeholder="Phone Number">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="c_create_account" class="text-black" data-bs-toggle="collapse"
+								href="#create_an_account" role="button" aria-expanded="false"
+								aria-controls="create_an_account"><input type="checkbox" value="1"
+									id="c_create_account"> Create an account?</label>
+							<div class="collapse" id="create_an_account">
+								<div class="py-2 mb-4">
+									<p class="mb-3">Create an account by entering the information below. If you are a
+										returning customer please login at the top of the page.</p>
+									<div class="form-group">
+										<label for="c_account_password" class="text-black">Account Password</label>
+										<input type="email" class="form-control" id="c_account_password"
+											name="c_account_password" placeholder="">
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<label for="c_ship_different_address" class="text-black" data-bs-toggle="collapse"
+								href="#ship_different_address" role="button" aria-expanded="false"
+								aria-controls="ship_different_address"><input type="checkbox" value="1"
+									id="c_ship_different_address"> Ship To A Different Address?</label>
+							<div class="collapse" id="ship_different_address">
+								<div class="py-2">
+
+									<div class="form-group row">
+										<div class="col-md-6">
+											<label for="c_diff_fname" class="text-black">First Name <span
+													class="text-danger">*</span></label>
+											<input type="text" class="form-control" id="c_diff_fname"
+												name="c_diff_fname">
+										</div>
+										<div class="col-md-6">
+											<label for="c_diff_lname" class="text-black">Last Name <span
+													class="text-danger">*</span></label>
+											<input type="text" class="form-control" id="c_diff_lname"
+												name="c_diff_lname">
+										</div>
+									</div>
+
+									<div class="form-group row">
+										<div class="col-md-12">
+											<label for="c_diff_companyname" class="text-black">Company Name </label>
+											<input type="text" class="form-control" id="c_diff_companyname"
+												name="c_diff_companyname">
+										</div>
+									</div>
+
+									<div class="form-group row  mb-3">
+										<div class="col-md-12">
+											<label for="c_diff_address" class="text-black">Address <span
+													class="text-danger">*</span></label>
+											<input type="text" class="form-control" id="c_diff_address"
+												name="c_diff_address" placeholder="Street address">
+										</div>
+									</div>
+
+									<div class="form-group">
+										<input type="text" class="form-control"
+											placeholder="Apartment, suite, unit etc. (optional)">
+									</div>
+
+									<div class="form-group row">
+										<div class="col-md-6">
+											<label for="c_diff_state_country" class="text-black">State / Country <span
+													class="text-danger">*</span></label>
+											<input type="text" class="form-control" id="c_diff_state_country"
+												name="c_diff_state_country">
+										</div>
+										<div class="col-md-6">
+											<label for="c_diff_postal_zip" class="text-black">Posta / Zip <span
+													class="text-danger">*</span></label>
+											<input type="text" class="form-control" id="c_diff_postal_zip"
+												name="c_diff_postal_zip">
+										</div>
+									</div>
+
+									<div class="form-group row mb-5">
+										<div class="col-md-6">
+											<label for="c_diff_email_address" class="text-black">Email Address <span
+													class="text-danger">*</span></label>
+											<input type="text" class="form-control" id="c_diff_email_address"
+												name="c_diff_email_address">
+										</div>
+										<div class="col-md-6">
+											<label for="c_diff_phone" class="text-black">Phone <span
+													class="text-danger">*</span></label>
+											<input type="text" class="form-control" id="c_diff_phone"
+												name="c_diff_phone" placeholder="Phone Number">
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="c_order_notes" class="text-black">Order Notes</label>
+							<textarea name="c_order_notes" id="c_order_notes" cols="30" rows="5" class="form-control"
+								placeholder="Write your notes here..."></textarea>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row mb-5">
+						<div class="col-md-12">
+							<h2 class="h3 mb-3 text-black">Your Order</h2>
+							<div class="p-3 p-lg-5 border bg-white">
+								<table class="table site-block-order-table mb-5">
+									<thead>
+										<tr>
+											<th>Product</th>
+											<th>Total</th>
+										</tr>
+									</thead>
+									<tbody id="checkout-order-summary">
+										<!-- JS will populate this dynamically -->
+									</tbody>
+								</table>
+								<!-- Bank Transfer -->
+								<div class="border p-3 mb-3">
+									<h3 class="h6 mb-0">
+										<input type="radio" name="paymentMethod" value="bank" id="bankRadio">
+										<label for="bankRadio" class="d-block">Direct Bank Transfer</label>
+									</h3>
+									<div class="collapse" id="collapsebank">
+										<div class="py-2">
+											<p><strong>Bank Name:</strong> State Bank of India</p>
+											<p><strong>Account Number:</strong> 1234567890</p>
+											<p><strong>IFSC Code:</strong> ABCD0123456</p>
+											<p><strong>Account Holder Name:</strong> Shrinivas Upadhye</p>
+											<p>Use your Order ID as payment reference. Shipment after fund confirmation.
+											</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- Cheque Payment -->
+								<div class="border p-3 mb-3">
+									<h3 class="h6 mb-0">
+										<input type="radio" name="paymentMethod" value="cheque" id="chequeRadio">
+										<label for="chequeRadio" class="d-block">Cheque Payment</label>
+									</h3>
+									<div class="collapse" id="collapsecheque">
+										<div class="py-2">
+											<p>Please make cheque payable to <strong>Livique</strong>.</p>
+											<p>Mail it to: <br><strong>21 gandhi Street, Apt 567<br>Pune Maharashtra,
+													411001</strong></p>
+											<p>Include Order ID in reference. Processing begins after cheque clearance.
+											</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- PayPal -->
+								<div class="border p-3 mb-5">
+									<h3 class="h6 mb-0">
+										<input type="radio" name="paymentMethod" value="paypal" id="paypalRadio">
+										<label for="paypalRadio" class="d-block">PayPal</label>
+									</h3>
+									<div class="collapse" id="collapsepaypal">
+										<div class="py-2">
+											<p>Click the link below to complete your transaction through PayPal.</p>
+											<a href="https://www.paypal.com/signin" target="_blank"
+												class="btn btn-outline-primary btn-sm mt-2">
+												Proceed to PayPal
+											</a>
+										</div>
+									</div>
+								</div>
+
+								<!-- Submit Button -->
+								<div class="form-group">
+									<button class="btn btn-black btn-lg py-3 btn-block" onclick="placeOrder()">Place
+										Order & Download tax invoice</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- </form> -->
+		</div>
+	</div>
+
+	<!-- Start Footer Section -->
+	<footer class="footer-section">
+		<div class="container relative">
+
+			<div class="sofa-img">
+				<img src="images/sofa.png" alt="Image" class="img-fluid">
+			</div>
+
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="subscription-form">
+						<h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg"
+									alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
+
+						<form action="#" class="row g-3">
+							<div class="col-auto">
+								<input type="text" class="form-control" placeholder="Enter your name">
+							</div>
+							<div class="col-auto">
+								<input type="email" class="form-control" placeholder="Enter your email">
+							</div>
+							<div class="col-auto">
+								<button class="btn btn-primary">
+									<span class="fa fa-paper-plane"></span>
+								</button>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="row g-5 mb-5">
+				<div class="col-lg-4">
+					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Livique<span>.</span></a></div>
+					<p class="mb-4">At Livique, we believe that your space should reflect your
+						personality
+						and enhance your lifestyle.
+						From modern aesthetics to timeless elegance, we bring interiors to life
+						with
+						purpose, precision, and passion.</p>
+
+					<ul class="list-unstyled custom-social">
+						<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a>
+						</li>
+						<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+						<li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+						<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+					</ul>
+				</div>
+
+				<div class="col-lg-8">
+					<div class="row links-wrap">
+						<div class="col-6 col-sm-6 col-md-3">
+							<ul class="list-unstyled">
+								<li><a href="about.html">About us</a></li>
+								<li><a href="services.html">Services</a></li>
+								<li><a href="blog.html">Blog</a></li>
+								<li><a href="contact.html">Contact us</a></li>
+							</ul>
+						</div>
+
+						<div class="col-6 col-sm-6 col-md-3">
+							<ul class="list-unstyled">
+								<li><a href="#">Support</a></li>
+								<li><a href="#">Knowledge base</a></li>
+								<li><a href="#">Live chat</a></li>
+							</ul>
+						</div>
+
+						<div class="col-6 col-sm-6 col-md-3">
+							<ul class="list-unstyled">
+								<li><a href="#">Jobs</a></li>
+								<li><a href="#">Our team</a></li>
+								<li><a href="#">Leadership</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-lg-6 text-center text-lg-end">
+			<ul class="list-unstyled d-inline-flex ms-auto">
+				<li class="me-4"><a href="terms.html">Terms &amp; Conditions</a></li>
+				<li><a href="privacy.html">Privacy Policy</a></li>
+			</ul>
+		</div>
+
+		</div>
+		</div>
+
+		</div>
+	</footer>
+	<!-- End Footer Section -->
+
+	<script>
+		const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+		if (loggedInUser) {
+			const orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+			const newOrder = {
+				email: loggedInUser.email,
+				item: "Example Product", // Replace with actual product name
+				date: new Date().toLocaleString(),
+				status: "Delivered" // Or "Pending", "Shipped", etc.
+			};
+
+			orders.push(newOrder);
+			localStorage.setItem("orders", JSON.stringify(orders));
+		}
+ document.addEventListener("DOMContentLoaded", () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const list = document.getElementById("checkout-list");
+    let total = 0;
+
+    if (list && cart.length) {
+      list.innerHTML = cart.map(item => {
+        total += item.price * item.quantity;
+        return `<li>${item.name} - ₹${item.price} x ${item.quantity}</li>`;
+      }).join("");
+      document.getElementById("checkout-total").innerText = `₹${total}`;
+    }
+
+    document.getElementById("place-order-btn").addEventListener("click", saveOrder);
+  });
+	</script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/tiny-slider.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="js/orders.js"></script>
+
+</body>
+
+</html>

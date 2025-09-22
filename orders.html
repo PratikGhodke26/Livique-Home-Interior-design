@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Orders</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>Your Order History</h2>
+    <div id="order-container"></div>
+  </div>
+
+  <script>
+    const container = document.getElementById("order-container");
+    const currentUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    const allOrders = JSON.parse(localStorage.getItem("orders")) || [];
+
+    if (!currentUser) {
+      container.innerHTML = "<p>Please login to view your order history.</p>";
+    } else {
+      const userOrders = allOrders.filter(order => order.user === currentUser.email);
+      if (userOrders.length === 0) {
+        container.innerHTML = "<p>You haven't placed any orders yet.</p>";
+      } else {
+        container.innerHTML = userOrders.map(order => {
+          const items = order.items.map(item =>
+            `<li>${item.name} - ₹${item.price} x ${item.quantity} = ₹${item.price * item.quantity}</li>`
+          ).join('');
+          return `
+            <div class="border p-3 mb-3">
+              <p><strong>Date:</strong> ${order.date} ${order.time}</p>
+              <ul>${items}</ul>
+              <p><strong>Total:</strong> ₹${order.total}</p>
+              <p><strong>Status:</strong> ${order.status}</p>
+            </div>
+          `;
+        }).join('');
+      }
+    }
+     document.addEventListener("DOMContentLoaded", renderOrderHistory);
+  </script>
+</body>
+</html>

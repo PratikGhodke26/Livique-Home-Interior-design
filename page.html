@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Info Table</title>
+</head>
+<body>
+
+  <h2>User Entry Form</h2>
+  <form id="userForm">
+    <input type="text" id="name" placeholder="Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="text" id="mobile" placeholder="Mobile Number" required>
+    <button type="submit" id="submitBtn">Add</button>
+  </form>
+
+  <h3>Stored Users</h3>
+  <table border="1" id="userTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    const userForm = document.getElementById("userForm");
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const mobileInput = document.getElementById("mobile");
+    const userTableBody = document.getElementById("userTable").querySelector("tbody");
+    const submitBtn = document.getElementById("submitBtn");
+
+    let users = [];
+    let editIndex = -1;
+
+    // ✅ Load from localStorage
+    const storedUsers = localStorage.getItem("userData");
+    if (storedUsers) {
+      users = JSON.parse(storedUsers);
+      renderTable();
+    }
+
+    userForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const mobile = mobileInput.value.trim();
+
+      if (!name || !email || !mobile) return;
+
+      const userData = { name, email, mobile };
+
+      if (editIndex === -1) {
+        users.push(userData);
+      } else {
+        users[editIndex] = userData;
+        editIndex = -1;
+        submitBtn.textContent = "Add";
+      }
+
+      //  Save to localStorage
+      localStorage.setItem("userData", JSON.stringify(users));
+
+      userForm.reset();
+      renderTable();
+    });
+
+    function renderTable() {
+      userTableBody.innerHTML = "";
+
+      users.forEach((user, index) => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td>${user.name}</td>
+          <td>${user.email}</td>
+          <td>${user.mobile}</td>
+          <td>
+            <button onclick="editUser(${index})">Edit</button>
+            <button onclick="deleteUser(${index})">Delete</button>
+          </td>
+        `;
+
+        userTableBody.appendChild(row);
+      });
+    }
+
+    window.editUser = function(index) {
+      const user = users[index];
+      nameInput.value = user.name;
+      emailInput.value = user.email;
+      mobileInput.value = user.mobile;
+      editIndex = index;
+      submitBtn.textContent = "Update";
+    }
+
+    window.deleteUser = function(index) {
+      users.splice(index, 1);
+      if (editIndex === index) {
+        editIndex = -1;
+        submitBtn.textContent = "Add";
+        userForm.reset();
+      }
+
+      //  Update localStorage
+      localStorage.setItem("userData", JSON.stringify(users));
+
+      renderTable();
+    }
+  </script>
+
+</body>
+</html>

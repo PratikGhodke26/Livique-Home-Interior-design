@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Livique</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    .errBText {
+      display: none;
+    }
+
+    .errText {
+      color: red;
+      display: block;
+    }
+
+    .redBorder {
+      border: 1px solid red;
+    }
+
+    .login-box {
+      max-width: 400px;
+      margin: auto;
+      margin-top: 60px;
+      padding: 30px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .signup-text {
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .signup-text a {
+      text-decoration: none;
+    }
+  </style>
+
+  <script>
+    function doLoginValidate() {
+      var username = document.getElementById("inputUsername");
+      var email = document.getElementById("inputEmail");
+      var password = document.getElementById("inputPassword");
+      var isValid = true;
+
+      // Username
+      if (username.value.trim().length < 2) {
+        document.getElementById("errUsername").classList.remove("errBText");
+        document.getElementById("errUsername").classList.add("errText");
+        username.classList.add("redBorder");
+        isValid = false;
+      } else {
+        document.getElementById("errUsername").classList.add("errBText");
+        username.classList.remove("redBorder");
+      }
+
+      // Email
+      if (!email.value.includes("@") || !email.value.includes(".") || email.value.trim().length < 5) {
+        document.getElementById("errEmail").classList.remove("errBText");
+        document.getElementById("errEmail").classList.add("errText");
+        email.classList.add("redBorder");
+        isValid = false;
+      } else {
+        document.getElementById("errEmail").classList.add("errBText");
+        email.classList.remove("redBorder");
+      }
+
+      // Password
+      if (password.value.length < 6) {
+        document.getElementById("errPassword").classList.remove("errBText");
+        document.getElementById("errPassword").classList.add("errText");
+        password.classList.add("redBorder");
+        isValid = false;
+      } else {
+        document.getElementById("errPassword").classList.add("errBText");
+        password.classList.remove("redBorder");
+      }
+
+      if (isValid) {
+        // ✅ Redirect to homepage (index.html)
+        window.location.href = "index.html";
+      }
+
+      return false; // prevent default form submission
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="login-box bg-light">
+      <h2 class="text-center mb-4">Login to Livique</h2>
+      <form onsubmit="return doLoginValidate()">
+        <!-- Username -->
+        <div class="mb-3">
+          <label for="inputUsername" class="form-label">Username</label>
+          <input type="text" class="form-control" id="inputUsername" placeholder="Enter username" />
+          <small id="errUsername" class="errBText">Username must be at least 2 characters</small>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="inputEmail" class="form-label">Email</label>
+          <input type="email" class="form-control" id="inputEmail" placeholder="Enter email" />
+          <small id="errEmail" class="errBText">Enter a valid email (e.g., user@example.com)</small>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label for="inputPassword" class="form-label">Password</label>
+          <input type="password" class="form-control" id="inputPassword" placeholder="Enter password" />
+          <small id="errPassword" class="errBText">Password must be at least 6 characters</small>
+        </div>
+
+        <!-- Submit -->
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+      </form>
+
+      <!-- Sign-up link -->
+      <div class="signup-text">
+        <p class="mt-3">New to Livique? <a href="signup.html">Sign up here</a></p>
+      </div>
+    </div>
+  </div>
+
+<script>
+  function doLoginValidate() {
+    const username = document.getElementById("inputUsername");
+    const email = document.getElementById("inputEmail");
+    const password = document.getElementById("inputPassword");
+    let isValid = true;
+
+    // Simple input validations
+    if (username.value.trim().length < 2) {
+      document.getElementById("errUsername").classList.remove("errBText");
+      document.getElementById("errUsername").classList.add("errText");
+      username.classList.add("redBorder");
+      isValid = false;
+    } else {
+      document.getElementById("errUsername").classList.add("errBText");
+      username.classList.remove("redBorder");
+    }
+
+    if (!email.value.includes("@") || !email.value.includes(".") || email.value.trim().length < 5) {
+      document.getElementById("errEmail").classList.remove("errBText");
+      document.getElementById("errEmail").classList.add("errText");
+      email.classList.add("redBorder");
+      isValid = false;
+    } else {
+      document.getElementById("errEmail").classList.add("errBText");
+      email.classList.remove("redBorder");
+    }
+
+    if (password.value.length < 6) {
+      document.getElementById("errPassword").classList.remove("errBText");
+      document.getElementById("errPassword").classList.add("errText");
+      password.classList.add("redBorder");
+      isValid = false;
+    } else {
+      document.getElementById("errPassword").classList.add("errBText");
+      password.classList.remove("redBorder");
+    }
+
+    // ✅ If input validation passed, check credentials
+    if (isValid) {
+      const inputEmail = email.value.trim();
+      const inputPassword = password.value;
+
+      // Get stored users
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+
+      // Hardcoded user
+      const hardcoded = {
+        name: "pratik",
+        email: "ghodkepratik271@gmail.com",
+        password: "pratik"
+      };
+
+      const matchedUser = users.find(u => u.email === inputEmail && u.password === inputPassword)
+        || (inputEmail === hardcoded.email && inputPassword === hardcoded.password ? hardcoded : null);
+
+      if (matchedUser) {
+        // ✅ Login success
+        localStorage.setItem("loggedInUser", JSON.stringify(matchedUser));
+        alert("Login successful!");
+        window.location.href = "index.html";
+      } else {
+        alert("Invalid email or password.");
+      }
+    }
+
+    return false; // Prevent default form submission
+  }
+</script>
+
+
+</html>
+  
